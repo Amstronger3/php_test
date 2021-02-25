@@ -40,7 +40,7 @@ class Product
 
             $db = Db::getConnection();            
             $products = array();
-            $result = $db->query("SELECT id, name, price, image, is_new FROM product "
+            $result = $db->query("SELECT id, name, price, is_new FROM product "
                     . "WHERE status = '1' AND category_id = '$categoryId' "
                     . "ORDER BY id DESC "                
                     . "LIMIT ".self::SHOW_BY_DEFAULT);
@@ -49,7 +49,7 @@ class Product
             while ($row = $result->fetch()) {
                 $products[$i]['id'] = $row['id'];
                 $products[$i]['name'] = $row['name'];
-                $products[$i]['image'] = $row['image'];
+//                $products[$i]['image'] = $row['image'];
                 $products[$i]['price'] = $row['price'];
                 $products[$i]['is_new'] = $row['is_new'];
                 $i++;
@@ -77,10 +77,28 @@ class Product
             return $result->fetch();
         }
     }
+       
     
-    
-    
-    
+        public static function getProdustsByIds($idsArray) {
+        
+        $products = array();
+        $db = Db::getConnection();
+        $idsString = implode(',', $idsArray);
+        $sql = "SELECT * FROM product WHERE status='1' AND id IN ($idsString)";
+        $result = $db->query($sql);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        
+        $i = 0;
+        
+        while ($row = $result->fetch()) {
+            $products[$i]['id'] = $row['id'];
+            $products[$i]['code'] = $row['code'];
+            $products[$i]['name'] = $row['name'];
+            $products[$i]['price'] = $row['price'];
+            $i++;            
+        }
+        return $products;        
+    }
     
     
     

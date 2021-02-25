@@ -1,5 +1,7 @@
 <?php
 
+include_once 'W:/domains/test.com/components/Db.php';
+
 class Category
 {
 
@@ -10,8 +12,6 @@ class Category
     {
 
         $db = Db::getConnection();
-
-        $categoryList = array();
 
         $result = $db->query('SELECT id, name FROM category WHERE status = "1" ORDER BY sort_order, name ASC');
 
