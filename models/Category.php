@@ -1,6 +1,6 @@
 <?php
 
-include_once 'W:/domains/test.com/components/Db.php';
+include_once ROOT . '/components/Db.php';
 
 class Category
 {

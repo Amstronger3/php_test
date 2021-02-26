@@ -34,7 +34,7 @@ class CartController
             $totalPrice = Cart::getTotalPrice($products);            
         }
         
-        require_once ('W:/domains/test.com/views/cart/index.php');
+        require_once (ROOT . '/views/cart/index.php');
         return true;
     }
     

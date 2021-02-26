@@ -16,7 +16,7 @@ function __autoload($class_name)
     foreach ($array_paths as $path) {
 
         // Формируем имя и путь к файлу с классом
-        $path = 'W:/domains/test.com/' . $path . $class_name . '.php';
+        $path = ROOT . $path . $class_name . '.php';
 
         // Если такой файл существует, подключаем его
         if (is_file($path)) {

@@ -1,4 +1,4 @@
-<?php include 'W:/domains/test.com/views/layouts/header.php'; ?>
+<?php include ROOT . '/views/layouts/header.php'; ?>
 
 <section>
     <div class="container">
@@ -77,4 +77,4 @@
 </section>
 
 
-<?php include 'W:/domains/test.com/views/layouts/footer.php'; ?>
+<?php include ROOT . '/views/layouts/footer.php'; ?>

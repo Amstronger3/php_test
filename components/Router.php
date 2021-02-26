@@ -7,7 +7,7 @@ class Router
 
     public function __construct()
     {
-        $routesPath = 'W:/domains/test.com/config/routes.php';
+        $routesPath = ROOT . '/config/routes.php';
         $this->routes = include($routesPath);
     }
 
@@ -47,7 +47,7 @@ class Router
                 $parameters = $segments;
                 
                 // Подключить файл класса-контроллера
-                $controllerFile = 'W:/domains/test.com/controllers/' .
+                $controllerFile = ROOT . '/controllers/' .
                         $controllerName . '.php';
 
                 if (file_exists($controllerFile)) {

@@ -5,7 +5,7 @@ class Db
     
     public static function getConnection()
     {
-        $paramsPath = 'W:/domains/test.com/config/db_params.php';
+        $paramsPath = ROOT . '/config/db_params.php';
         $params = include($paramsPath);
         
 
