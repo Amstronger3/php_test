@@ -18,6 +18,15 @@ class CartController
         return true;
     }
     
+    
+    public function actionDelete($id) {
+        
+        Cart::deleteProduct($id);
+        header("Location: /cart");
+        
+    }
+    
+    
     public function actionIndex() {
         $categories = array();
         $categories = Category::getCategoriesList();

@@ -54,4 +54,15 @@ class Cart {
         }
         return $total;
     }
+    
+    
+    public static function deleteProduct($id) {
+        
+        $producntsInCart = self::getProducts();
+        
+        unset($producntsInCart[$id]);
+        
+        $_SESSION['products'] = $producntsInCart;
+        
+    }
 }
